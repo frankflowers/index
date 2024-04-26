@@ -3,25 +3,54 @@
     --blanco: #ffffff;
     --oscuro: #212121;
     --primario: #ffc107;
-    --secundario: #0097a7;
+    --secundario: #0b0eb4;
     --gris: #757575;
   
   }
-  
+  html{
+    font-size: 62.5%;
+
+    box-sizing: border-box0;
+  }
+  *,*:before,*:after{
+    box-sizing: inherit;
+  }
   
   
   html{
     font-size: 62.5%;
   }
+
+
   body {
     font-size: 16px;
   }
-  .titulo{
-    text-align: center;
-    font-size: 3.8rem;
+
+
+h1{
+  font-size: 3.8rem;
+}
+h2{
+  font-size: 2.8rem;
+
+}
+h3{
+  font-size: 1.8rem;
+
+}
+h1,h2,h3{
+text-align: center;
+
+}
+
+
+
+
+
+
+
   
   
-  }
   .titulo span{
     font-size: 2rem;
   
@@ -50,10 +79,12 @@
     background-color: null;
   
   }
-  /*Displaying block orizontal-inline es verticar*/
+  /*Displaying block horizontal-inline es vertical*/
   .navegacion-principal{
-    padding: 1rem;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+
     /*  justifi content es para filas
     align-items es para columnas flex-direction
     */
@@ -76,18 +107,53 @@
     background-color: var(--primario);
 
   }
-body{
-  background-color: beige;
-}
-  @media (min-width: 480px) {
-    body{
-      background-color: blue;
-    }
+
+
+  .hero{
+    background-image: url(../image/hero.jpg);
+    /* ../ es para regresar un nivel del directorio la carpeta img esta fuera de css*/
+
+    background-repeat: no-repeat;
+        /* en imagenes pequeñas suele repetirse y abarcar mas espacio de la pagina*/
+    background-size: cover;
+    height: 450px;
+    position: relative;
+
+  
   }
 
-  @media (min-width: 780px) {
-    body{
-      background-color: cornflowerblue;
-    }
+  .contenedor-hero{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    /*Alinear vertical y horizontalmente */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
   }
- 
+
+  .contenedor-hero p, .contenedor-hero h2{
+    color: var(--blanco);
+}
+
+.Ubicación{
+    display:flex;
+    align-items: flex-end;
+}
+
+.boton{
+    background-color: var(--secundario); /*color de fondo del boton*/
+    color: var(--blanco); /*color del texto*/
+    padding: 1rem 3rem;
+    margin-top: 3rem; /*separación superior*/
+    font-size: 2rem;
+    text-decoration: none; /*Quitar el subrayador*/
+    text-transform: uppercase; /*convertir texto en negritas*/
+    font-weight: bold; /*Poner texto en negritas*/
+    border-radius: .5rem; /*Esquinas redondeadas*/
+    width: 90%; /*Ancho del boton*/
+    text-align: center; /*Centrar el texto del botón*/
+}
