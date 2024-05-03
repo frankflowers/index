@@ -1,159 +1,226 @@
 :root{
 
-    --blanco: #ffffff;
-    --oscuro: #212121;
-    --primario: #ffc107;
-    --secundario: #0b0eb4;
-    --gris: #757575;
-  
-  }
-  html{
-    font-size: 62.5%;
-
-    box-sizing: border-box0;
-  }
-  *,*:before,*:after{
-    box-sizing: inherit;
-  }
-  
-  
-  html{
-    font-size: 62.5%;
-  }
+  --blanco: #ffffff;
+  --oscuro: #212121;
+  --primario: #ffc107;
+  --secundario: #0097a7;
+  --gris: #757575;
 
 
-  body {
-    font-size: 16px;
-  }
+}
 
 
+
+html{
+  font-size: 62.5%;
+  /*Hack para boxmodel*/
+  box-sizing: border-box;
+}
+/*Hack para boxmodel*/
+*,*::before,*::after{
+  box-sizing: inherit;
+}
+/*Tipo grafia*/
 h1{
   font-size: 3.8rem;
 }
 h2{
   font-size: 2.8rem;
-
 }
 h3{
   font-size: 1.8rem;
-
 }
 h1,h2,h3{
-text-align: center;
+  text-align:center;
+}
+body {
+  font-size: 16px;
+  font-family: 'krub', sans-serif;
+  background-image: linear-gradient(to top,var(--gris)0%, var(--blanco)100%);
 
 }
 
-
-
-
-
-
-
+.titulo span{
+  font-size: 2rem;
   
-  
-  .titulo span{
-    font-size: 2rem;
-  
-  }
-  /*.navegacion-principal{
-    background-color: var(--secundario);
-    
-  
-  }*/
-  
-  .nav-bg{
-    background-color: var(--secundario);
-  }
-  .contenedor{
-    width: 120rem;
-   /*Una manera de poner los 4 margenes en 4 propiedades
-    margin-top: 0;
-    margin-bottom:  0;
-    margin-right: auto;*/
-    /*margin: 0 auto 0 auto ;  tomando las posiciones del reloj*/
-    margin:0 auto; /*El primer valor corresponde a top-bottom y el segundo valor corrresponde a right-left */
-    
-  }
-  .navegacion-principal a{
 
-    background-color: null;
+}
+.navegacion-principal{
+  background-color: var(--secundario);
   
-  }
-  /*Displaying block horizontal-inline es vertical*/
+
+}
+
+.nav-bg{
+  background-color: var(--secundario);
+}
+.contenedor{
+  max-width: 120rem;
+ /*Una manera de poner los 4 margenes en 4 propiedades
+  margin-top: 0;
+  margin-bottom:  0;
+  margin-right: auto;*/
+  /*margin: 0 auto 0 auto ;  tomando las posiciones del reloj*/
+  margin:0 auto; /*El primer valor corresponde a top-bottom y el segundo valor corrresponde a right-left */
+}
+/*Displaying block orizontal-inline es vertical*/
+
+.navegacion-principal{
+  align-items: center;
+  display:flex;
+  flex-direction: column;
+  /*Justify-content es para filas
+  alaing-items es para columnas (flex-direction)*/
+  
+  justify-content: space-between;
+  font-size: 2rem;
+  font-weight: bold;
+  /*Weight es para poner negritas*/
+
+}
+@media (min-width:768px){
   .navegacion-principal{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    /*  justifi content es para filas
-    align-items es para columnas flex-direction
-    */
-    justify-content: space-around;
-    font-size: 2rem;
-    font-weight: bold; /* negritas*/
-
+    flex-direction: row;
   }
+ 
+}
+.navegacion-principal a{
+  padding: 1rem;
+  color:var(--blanco);
+  text-decoration:none;
+}
+/*sentrar el nav y investigar que es flex box*/
+
+.navegacion-principal a:hover{
+background-color: var(--primario);
+color:var(--oscuro);
+}
+/*hover es una seudo clase-porque se activa cuando haces una accion- Las maneras para css  talwind y boostrap*/
+
+/*Tamaños recomendados para media query
+480px para moviles 
+768px para tablets 
+1140px para laptops
+1400px para dispositivos más grandes como monitores o tvs*/
+body { background-color: beige; }
+/*
+@media (min-width: 480px){
+body{
+ background-color:blue;}
+
+
+@media (min-width: 780px){
+  body{
+    /*background-color:cornflowerblue;}
+  }
+  @media (min-width:px){
+   
+  }
+  /* que es un snippet y que es json/*/
+.hero{
+  background-image: url(../image/hero.jpg);
+  /*../ Es para regresar un nivel del directorio, la carpeta img está afuera */
+  background-repeat: no-repeat;
+  /**es imagenes pequeñas suele repertise y abarcar el espacio de la pagina */
+  background-size: cover; /* Sirve para cubrir la imagen con el todo el tamaño*/
+  height: 450px;/*Alto del elemento hero*/
+  position: relative; /*Para manipular la posicion, el padre siempre debe ser relative */
+}
+.contenedor-hero{
+  position: absolute;/*El hijo debe de ser absoluto*/
+  background-color: rgba(0, 0, 0, .7);
+  width: 100%;
+  height: 100%;
+  /*.7 es la trasparencia*/
+  /*alinear y vertical y horizontalmente*/
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content: center;
   
-  .navegacion-principal a{
-        padding: 1rem;
-    color:var(--blanco);
-    text-decoration:none;
-  }
-  /*sentrar el nav y investigar que es flex box*/
   
 
-  .navegacion-principal a:hover{
+}
+.contenedor-hero p, .contenedor-hero h2{
+  color: var(--blanco);
+}
+.ubicacion{
+  display:flex;
+  align-items: flex-end;
 
-    background-color: var(--primario);
-
+}
+.botton{
+  background-color:var(--secundario);
+  color: var(--blanco);
+  padding: 1rem 3rem;
+  margin-top:3rem;/*Separacion superior*/
+  font-size:2rem;
+  text-decoration: none; /*Quitar subrayado*/
+  text-transform: uppercase;/*Convertir texto en mayusculas*/
+  font-weight:bold;/*poner texto en negrita*/
+  border-radius: .5rem; /*Borde de las esquinas redondeadas */
+  width:90%; /*Ancho del boton*/
+  text-align:center; /*Centrar texto del boton*/
+}
+@media (min-width:768px){
+  .botton{
+    width: auto;
   }
-
-
-  .hero{
-    background-image: url(../image/hero.jpg);
-    /* ../ es para regresar un nivel del directorio la carpeta img esta fuera de css*/
-
-    background-repeat: no-repeat;
-        /* en imagenes pequeñas suele repetirse y abarcar mas espacio de la pagina*/
-    background-size: cover;
-    height: 450px;
-    position: relative;
-
-  
-  }
-
-  .contenedor-hero{
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.7);
-    width: 100%;
-    height: 100%;
-    /*Alinear vertical y horizontalmente */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-  }
-
-  .contenedor-hero p, .contenedor-hero h2{
-    color: var(--blanco);
+ 
+}
+.sombra{
+  margin-top: 2rem;
+   box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.48);
+   /*Motor para google chrome*/
+  -webkit-box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.48);
+  /*Motor para google firefox*/
+  -moz-box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.48);;
+  background-color: var(--blanco);
+  padding: 2rem;
+  border-radius: 1rem;
+  /*Vamos adaptar la seccion de mis servicios usando "flexbos". 
+  y que es box shadow, blur, box model  
+  son motores para firefox y chrome
+  mox-boxshadow webkit-box-shadow*/
 }
 
-.Ubicación{
-    display:flex;
-    align-items: flex-end;
+
+
+/*servicios*/
+@media (min-width: 768px){
+ .servicios{
+  display: grid;
+ /* grid-template-columns: 1fr 1fr 1fr;*/
+  grid-template-columns: repeat(3,1fr);
+ }
+
+ .servicio{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ } 
+/*ajustar color y sin negritas del h3*/
+.servicio h3 {
+  color: var(--secundario);
+  font-weight: normal;
+
 }
 
-.boton{
-    background-color: var(--secundario); /*color de fondo del boton*/
-    color: var(--blanco); /*color del texto*/
-    padding: 1rem 3rem;
-    margin-top: 3rem; /*separación superior*/
-    font-size: 2rem;
-    text-decoration: none; /*Quitar el subrayador*/
-    text-transform: uppercase; /*convertir texto en negritas*/
-    font-weight: bold; /*Poner texto en negritas*/
-    border-radius: .5rem; /*Esquinas redondeadas*/
-    width: 90%; /*Ancho del boton*/
-    text-align: center; /*Centrar el texto del botón*/
+.servicio p{
+  text-align: center;
+  /*interlineado*/
+  line-height: 2;
 }
+/*ccs grid en mis servicios*/
+.servicio .iconos{
+height: 15rem;
+width: 15rem;
+background-color: var(--primario);
+border-radius: 50%;
+display: flex;
+justify-content: space-evenly;
+align-items: center;
+
+}
+
+}  
