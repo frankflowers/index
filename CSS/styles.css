@@ -64,7 +64,24 @@ body {
   margin:0 auto; /*El primer valor corresponde a top-bottom y el segundo valor corrresponde a right-left */
 }
 /*Displaying block orizontal-inline es vertical*/
+/*utilidades*/
+.w-sm-100{
+  width: 100%
+}
+@media(min-width: 768px){
 
+  .w-sm-100{
+    width: auto;
+  }
+}
+
+.flex{
+  display: flex;
+}
+
+.alinear-derecha{
+  justify-content: flex-end;
+}
 .navegacion-principal{
   align-items: center;
   display:flex;
@@ -84,6 +101,7 @@ body {
   }
  
 }
+
 .navegacion-principal a{
   padding: 1rem;
   color:var(--blanco);
@@ -149,7 +167,7 @@ body{
   align-items: flex-end;
 
 }
-.botton{
+.button{
   background-color:var(--secundario);
   color: var(--blanco);
   padding: 1rem 3rem;
@@ -161,12 +179,17 @@ body{
   border-radius: .5rem; /*Borde de las esquinas redondeadas */
   width:90%; /*Ancho del boton*/
   text-align:center; /*Centrar texto del boton*/
+  border: none;/* Esto afecta unicamente a la etiqueta input*/
 }
 @media (min-width:768px){
-  .botton{
+  .button{
     width: auto;
   }
  
+}
+.button:hover{
+cursor: pointer;
+
 }
 .sombra{
   margin-top: 2rem;
@@ -224,3 +247,67 @@ align-items: center;
 }
 
 }  
+
+/*COntacto*/
+
+.formulario{
+background-color: var(--gris);
+width: min(100rem, 100%);
+/*ahorra el sudo de media query, ¿QUe es mas pequeña,60 rem o el 100% del tamaño de la pantalla?*/
+
+margin: 0 auto;
+padding: 2rem;
+border-radius: 1rem;
+}
+
+.formulario fieldset{
+
+  border: none;
+}
+
+
+.formulario legend{
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  color: var(--primario);
+}
+
+@media (min-width: 768px){
+  .contenedor-campos{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    column-gap: 1rem;
+    grid-template-rows: auto auto 20rem; /*Darle el espacio de cada fila*/
+  }
+  /*nth-child significa el #del hijo, el orden seria; nombre, telefono, correo, y mensaje.
+  como requeriamos modificar corre y mensaje, usaremps 3 y 4 en nth-child*/
+  .campo:nth-child(3),
+  .campo:nth-child(4){
+    /*posicionamiento de columnas*/
+    grid-column: 1/3;
+  }
+}
+
+.campo label{
+color: var(--blanco);
+font-weight: bold;
+margin-bottom: .5rem;
+display: block;
+}
+
+.input-text{
+  width: 100%;
+  border: none;
+  padding: 1.5rem;
+  border-radius:.5rem;
+}
+.campo textarea{
+height: 20rem;/* Haver mas grande la altura del textarea*/
+}
+
+.footer{
+  text-align: center;
+}

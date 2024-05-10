@@ -42,9 +42,9 @@
     <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
     <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z" />
   </svg>
-  <p>Mérida Yucatán</p>
+  <p>Mérida, Yucatán</p>
   </div>
-  <a class="botton">Contactar</a>
+  <a class="button">Contactar</a>
 
 </section>
   <main class="contenedor sombra">
@@ -101,44 +101,48 @@
 
 </section>
 </div>
-</main>
+
 
 <section>
   <h2>Contacto</h2>
-  <form> 
+  <form class="formulario"> 
     <fieldset>
       <Legend>Contactanos llenando todos los campos</Legend>
-      <div>
+      <div class="contenedor-campos">
+      <div class="campo">
         <label>Nombre</label>
-        <input type="text" placeholder="Tu Nombre">
+        <input class="input-text" type="text" placeholder="Tu Nombre">
 
       </div>
 
-      <div>
+      <div class="campo">
         <label for="">Telefono</label>
-        <input type="tel" placeholder="Tu Telefono">
+        <input class="input-text"  type="tel" placeholder="Tu Telefono">
       </div>
       
-      <div>
+      <div class="campo">
         <label for="">Correo electronico</label>
-        <input type="email" placeholder="Tu email" >
+        <input class="input-text"  type="email" placeholder="Tu email" >
       </div>
 
-      <div>
-        <label>Texto</label>
-        <textarea name="" id="" cols="30" rows="10"></textarea>
+      <div class="campo" >
+        <label>Mensaje</label>
+        <textarea class="input-text" name="" id="" cols="30" rows="10"></textarea>
 
       </div>
+        </div><!--.contenedor-campos-->
+      <div class="alinear-derecha flex" > 
 
-      <div>
-        <input type="submit" value="Enviar">
+      
+        <input class="button w-sm-100" type="submit" value="Enviar">
 
       </div>
+   
     </fieldset>
   </form>
 </section>
-
-<footer>
+</main>
+<footer class="footer">
   <p>Todos los derechos revervados©</p>
 </footer>
 
